@@ -14,6 +14,7 @@ async function fetchWeatherData(location) {
     const url = `https://wttr.in/${location}?format=j1`;
     try {
         // TODO: Fetch data from the API using async/await
+        const response = await fetch(url);
         // Hint: Use the fetch() method and await its response
         
         if (!response.ok) {
@@ -23,6 +24,7 @@ async function fetchWeatherData(location) {
         return weatherData;
     } catch (error) {
         // TODO: Handle errors gracefully
+        console.error('Fetch Error:', error);
         // Hint: Log the error to the console and rethrow it
         
         
