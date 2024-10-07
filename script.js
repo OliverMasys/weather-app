@@ -24,7 +24,7 @@ async function fetchWeatherData(location) {
         return weatherData;
     } catch (error) {
         // TODO: Handle errors gracefully
-        console.error('Fetch Error:', error);
+        throw error('Fetch Error:', error);
         // Hint: Log the error to the console and rethrow it
         
         
@@ -66,8 +66,8 @@ async function getWeather(location) {
         
     } catch (error) {
         // TODO: Display an error message in the DOM
-        const displayElement = document.getElementById('weatherDisplay');
-        displayElement.innerHTML = `<p> Failed to fetch weather data. Try again.</p>`;
+        const weatherElement = document.getElementById('weatherData');
+        weatherElement.innerHTML = `<p> Failed to fetch weather data. Try again.</p>`;
         // Hint: Use document.getElementById() to select the element and update its innerHTML
 
     }
