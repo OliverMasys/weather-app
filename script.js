@@ -34,9 +34,13 @@ async function fetchWeatherData(location) {
 // Function: Display Weather Data
 function displayWeatherData(data) {
     // TODO: Update the DOM with weather data
+    const weatherElement = document.getElementById('weatherData');
     // Hint: Use document.getElementById() to select the element and update its innerHTML
     
-
+    const currentCondition = data.current_condition;
+    const temperature = currentCondition.temp_C;
+    const feelsLike = currentCondition.feelsLikeC;
+    const description = currentCondition.weatherDesc. value; 
     
     
 }
