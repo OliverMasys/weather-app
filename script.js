@@ -48,8 +48,8 @@ function displayWeatherData(data) {
             <div class = card-body">
             <h3 class = "card-title"> Weather for your location</h3>
             <p class = "card-title"><strong>Temputure:</strong>Temperature:</strong> ${temperature}°C</p>
-            <p class = "card-title"><strong>Temputure:</strong>Feels like:</strong> ${feelsLike}</p>
-            <p class = "card-title"><strong>Temputure:</strong>Condition:</strong> ${description}</p>
+            <p class = "card-title"><strong>Feels:</strong>Feels like:</strong> ${feelsLike}</p>
+            <p class = "card-title"><strong>Condition:</strong>Condition:</strong> ${description}</p>
         </div>
     </div>
     `;
