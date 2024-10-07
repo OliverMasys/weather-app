@@ -37,23 +37,37 @@ function displayWeatherData(data) {
     const weatherElement = document.getElementById('weatherData');
     // Hint: Use document.getElementById() to select the element and update its innerHTML
     
-    const currentCondition = data.current_condition;
-    const temperature = currentCondition.temp_C;
-    const feelsLike = currentCondition.feelsLikeC;
-    const description = currentCondition.weatherDesc. value; 
+    const currentCondition = data.current_condition; 
+    const temperature = currentCondition.temp_C; //Temperature in Celsius
+    const feelsLike = currentCondition.feelsLikeC; //feels like in Celsius
+    const description = currentCondition.weatherDesc. value; // weather description
     
-    
+    //update innerHTML display
+    displayElement.innerHTML = `
+        <div class = "card">
+            <div class = card-body">
+            <h3 class = "card-title"> Weather for your location</h3>
+            <p class = "card-title"><strong>Temputure:</strong>Temperature:</strong> ${temperature}</p>
+            <p class = "card-title"><strong>Temputure:</strong>Feels like:</strong> ${feelsLike}</p>
+            <p class = "card-title"><strong>Temputure:</strong>Condition:</strong> ${description}</p>
+        </div>
+    </div>
+    `;
 }
 
 // Function: Get Weather
 async function getWeather(location) {
     try {
         // TODO: Fetch weather data and display it
+        const weatherData = await fetchWeatherData(location);
+        displayWeatherData(weatherData);
         // Hint: Call fetchWeatherData() and displayWeatherData()
         
         
     } catch (error) {
         // TODO: Display an error message in the DOM
+        const displayElement = document.getElementById('weatherDisplay');
+        displayElement.innerHTML = `<p> Failed to fetch weather data. Try again.</p>`;
         // Hint: Use document.getElementById() to select the element and update its innerHTML
 
     }
