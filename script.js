@@ -37,17 +37,17 @@ function displayWeatherData(data) {
     const weatherElement = document.getElementById('weatherData');
     // Hint: Use document.getElementById() to select the element and update its innerHTML
     
-    const currentCondition = data.current_condition; 
+    const currentCondition = data.current_condition[0]; 
     const temperature = currentCondition.temp_C; //Temperature in Celsius
     const feelsLike = currentCondition.feelsLikeC; //feels like in Celsius
-    const description = currentCondition.weatherDesc. value; // weather description
+    const description = currentCondition.weatherDesc[0].value; // weather description
     
     //update innerHTML display
-    displayElement.innerHTML = `
+    weatherElement.innerHTML = `
         <div class = "card">
             <div class = card-body">
             <h3 class = "card-title"> Weather for your location</h3>
-            <p class = "card-title"><strong>Temputure:</strong>Temperature:</strong> ${temperature}</p>
+            <p class = "card-title"><strong>Temputure:</strong>Temperature:</strong> ${temperature}°C</p>
             <p class = "card-title"><strong>Temputure:</strong>Feels like:</strong> ${feelsLike}</p>
             <p class = "card-title"><strong>Temputure:</strong>Condition:</strong> ${description}</p>
         </div>
